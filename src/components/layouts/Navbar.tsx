@@ -6,7 +6,7 @@ export default function NavbarComponent() {
   return (
    <header className="sticky top-0 z-50">
      <section className="w-[100%] mx-auto  shadow-ss1 flex justify-center">
-      <Navbar fluid rounded className=" w-[92%] ">
+      <Navbar fluid rounded className=" w-[100%] ">
         <Navbar.Brand href="page.tsx" className="py-2">  
           <img
             src="/logo3.png"

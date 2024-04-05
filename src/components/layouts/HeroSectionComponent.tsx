@@ -1,9 +1,5 @@
 "use client";
 
-import { Button } from "flowbite-react";
-
-import Link from "next/link";
-import Image from "next/image";
 
 export default function HeroSectionComponent() {
   return (

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -25,28 +26,30 @@ const page = () => {
                 </h2>
 
                 <p>
-                  At SEU SHOPPING, we're more than just an online
-                  marketplace. We're a community of passionate individuals
-                  dedicated to providing you with the best shopping experience
-                  possible. With a diverse range of products and a commitment to
-                  quality, we strive to be your go-to destination for all your
-                  shopping needs. .
+                  At SEU SHOPPING, we're more than just an online marketplace.
+                  We're a community of passionate individuals dedicated to
+                  providing you with the best shopping experience possible. With
+                  a diverse range of products and a commitment to quality, we
+                  strive to be your go-to destination for all your shopping
+                  needs. .
                 </p>
               </div>
             </main>
           </div>
         </div>
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            className="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full"
+          <Image
             src="/pf.jpg"
-            alt=""
+            alt="mengseu"
+            width={500} // Set the width of the image
+            height={300} // Set the height of the image
+            layout="responsive" // Specify the layout to be responsive
           />
         </div>
       </div>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
