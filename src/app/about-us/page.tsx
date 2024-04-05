@@ -1,9 +1,10 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 const page = () => {
   return (
     <div>
+      <div>
       <div id="about" className="relative bg-white overflow-hidden mt-16">
         <div className="max-w-7xl mx-auto">
           <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
@@ -26,8 +27,8 @@ const page = () => {
                 </h2>
 
                 <p>
-                  At SEU SHOPPING, we're more than just an online marketplace.
-                  We're a community of passionate individuals dedicated to
+                  At SEU SHOPPING, we&apos;re more than just an online marketplace.
+                  We&apos;re a community of passionate individuals dedicated to
                   providing you with the best shopping experience possible. With
                   a diverse range of products and a commitment to quality, we
                   strive to be your go-to destination for all your shopping
@@ -51,7 +52,8 @@ const page = () => {
       <br />
       <br />
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default page;
+export default page
