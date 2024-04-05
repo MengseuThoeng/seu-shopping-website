@@ -5,6 +5,7 @@ import { ProductType } from "@/types/product";
 import { Suspense } from "react";
 import LoadingComponent from "./Loading";
 import HeroSectionComponent from "@/components/layouts/HeroSectionComponent";
+import Link from "next/link";
 
 async function fetchProduct() {
   const product = await fetch("https://store.istad.co/api/products/", {
@@ -20,21 +21,21 @@ export default async function Home() {
   return (
     <>
       <HeroSectionComponent />
-      <br />
-      <h2 className="text-[40px] text-center text-purple-500 font-bold">
-        Products
-      </h2>
-      <div className="mt-10 z-0 flex justify-center flex-wrap gap-7">
-        <Suspense fallback={<LoadingComponent />}>
-          {product?.map((pro: ProductType) => (
+      <h2 className='text-[30px] mt-4 text-center text-emerald-500 my-6'>Products</h2>
+      <div className="mt-12 w-[95%] mx-auto z-0 flex justify-center flex-wrap gap-7">
+      <Suspense fallback={<LoadingComponent/>} >
+        {product?.map((pro: ProductType) => {
+          return(
+            <Link href={`/productDetail/${pro.id}`} key={pro.id}>
             <CardProductComponent
-              image={pro.image}
-              desc={pro.desc}
-              name={pro.name}
-              key={pro.id}
-              price={pro.price}
-            />
-          ))}
+            name={pro.name}
+            desc={pro.desc}
+            image={pro.image}
+            price={pro.price}
+          />
+          </Link>
+          
+        )})}
         </Suspense>
       </div>
     </>
