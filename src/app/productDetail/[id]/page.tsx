@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Product Detail",
+  description: "This is Product page store bro",
+  keywords: ["shop", "anime", "shopping", "store"]
+};
 export type ParamProps = {
   params: {
     id: string | number;
   };
 };
-
 async function getDetail(id: number | string) {
   const productDetail = await fetch(
     `https://store.istad.co/api/products/${id}`
   );
   return productDetail.json();
 }
-
-// export async function generateMetadata({ params }: ParamProps) {
-//   const id = params.id;
-//   const product = await getDetail(id);
-// }
-
 async function page({ params }: ParamProps) {
   const id = params.id;
   const productDetail = await getDetail(id);
@@ -32,6 +31,7 @@ async function page({ params }: ParamProps) {
             src={productDetail.image}
             alt={productDetail.image}
           />
+          
           <div className="content bg-white p-2 pt-8 md:p-12 pb-12 lg:max-w-lg w-full lg:absolute top-48 right-5">
             <div className="flex justify-between font-bold text-sm">
               <p>{productDetail.category}</p>
@@ -54,3 +54,6 @@ async function page({ params }: ParamProps) {
 }
 
 export default page;
+
+
+

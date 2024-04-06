@@ -1,6 +1,12 @@
+
 import Image from 'next/image'
 import React from 'react'
-
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "This is Product page store bro",
+  keywords: ["shop", "anime", "shopping", "store"]
+};
 const page = () => {
   return (
     <div>

@@ -4,4 +4,5 @@ export type ProductType = {
     desc: string,
     image: string,
     price: number,
+    category:string,
 }

@@ -8,11 +8,21 @@ import HeroSectionComponent from "@/components/layouts/HeroSectionComponent";
 import Link from "next/link";
 
 async function fetchProduct() {
-  const product = await fetch("https://store.istad.co/api/products/", {
-    cache: "no-store",
-  });
-  const res = await product.json();
-  return res.results;
+  try {
+    const product = await fetch("https://store.istad.co/api/products/", {
+      cache: "no-store",
+    });
+
+    if (!product.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    const res = await product.json();
+    return res.results;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return []; // or handle the error in an appropriate way
+  }
 }
 
 export default async function Home() {
@@ -21,21 +31,23 @@ export default async function Home() {
   return (
     <>
       <HeroSectionComponent />
-      <h2 className='text-[30px] mt-4 text-center text-emerald-500 my-6'>Products</h2>
+      <h2 className="text-[30px] mt-4 text-center text-emerald-500 my-6">
+        Products
+      </h2>
       <div className="mt-12 w-[95%] mx-auto z-0 flex justify-center flex-wrap gap-7">
-      <Suspense fallback={<LoadingComponent/>} >
-        {product?.map((pro: ProductType) => {
-          return(
-            <Link href={`/productDetail/${pro.id}`} key={pro.id}>
-            <CardProductComponent
-            name={pro.name}
-            desc={pro.desc}
-            image={pro.image}
-            price={pro.price}
-          />
-          </Link>
-          
-        )})}
+        <Suspense fallback={<LoadingComponent />}>
+          {product?.map((pro: ProductType) => {
+            return (
+              <Link href={`/productDetail/${pro.id}`} key={pro.id}>
+                <CardProductComponent
+                  name={pro.name}
+                  category={pro.category}
+                  image={pro.image}
+                  price={pro.price} desc={""}                
+                  />
+              </Link>
+            );
+          })}
         </Suspense>
       </div>
     </>

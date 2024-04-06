@@ -3,7 +3,7 @@ import { ProductType } from "@/types/product";
 
 //import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
 
-const CardHomeComponent = ({ name, desc, image, price }: ProductType) => {
+const CardHomeComponent = ({ name, category, image, price }: ProductType) => {
   return (
       <article className="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden">
         <div>
@@ -19,7 +19,7 @@ const CardHomeComponent = ({ name, desc, image, price }: ProductType) => {
             {name}
           </h2>
           <span className="font-normal text-gray-600">
-            Product ISTAD
+            {category}
           </span>
           <span className="font-semibold text-gray-800">${price}</span>
         </div>
