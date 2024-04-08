@@ -26,7 +26,7 @@ async function fetchProduct() {
 }
 
 export default async function Home() {
-  const product = await fetchProduct();
+  const products = await fetchProduct();
 
   return (
     <>
@@ -35,20 +35,19 @@ export default async function Home() {
         Products
       </h2>
       <div className="mt-12 w-[95%] mx-auto z-0 flex justify-center flex-wrap gap-7">
-        <Suspense fallback={<LoadingComponent />}>
-          {product?.map((pro: ProductType) => {
-            return (
-              <Link href={`/productDetail/${pro.id}`} key={pro.id}>
-                <CardProductComponent
-                  name={pro.name}
-                  category={pro.category}
-                  image={pro.image}
-                  price={pro.price} desc={""}                
-                  />
-              </Link>
-            );
-          })}
-        </Suspense>
+        {products?.map((product: ProductType) => (
+          <Link href={`/productDetail/${product.id}`} key={product.id}>
+            <div className="max-w-sm w-full bg-white rounded-lg overflow-hidden shadow-lg ring-4 ring-violet-500 ring-opacity-40">
+              <CardProductComponent
+                name={product.name}
+                category={product.category}
+                image={product.image}
+                price={product.price}
+                desc={""} // Assuming you have a desc prop in CardProductComponent
+              />
+            </div>
+          </Link>
+        ))}
       </div>
     </>
   );

@@ -3,8 +3,8 @@
 
 export default function HeroSectionComponent() {
   return (
-    <section className="bg-gray-100 text-gray-800">
-      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-evenly">
+    <section className=" text-gray-800">
+      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-evenl">
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           <h1 className="text-5xl font-bold leading-none sm:text-6xl">
             WELCOME TO
@@ -40,6 +40,9 @@ export default function HeroSectionComponent() {
           />
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
     </section>
   );
 }
