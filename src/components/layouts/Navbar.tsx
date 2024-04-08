@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, Navbar } from "flowbite-react";
+import Link from 'next/link'; // Import Link from next/link
 
 export default function NavbarComponent() {
   return (
@@ -18,7 +19,9 @@ export default function NavbarComponent() {
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2">
+          <Link href="/dashboard">
           <Button className="bg-violet-600 ">Dashboard</Button>
+          </Link>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>

@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     <>
       <HeroSectionComponent />
-      <h2 className="text-[30px] mt-4 text-center text-emerald-500 my-6">
+      <h2 className="text-[50px] mt-4 text-center font-bold text-violet-500 my-6">
         Products
       </h2>
       <div className="mt-12 w-[95%] mx-auto z-0 flex justify-center flex-wrap gap-7">

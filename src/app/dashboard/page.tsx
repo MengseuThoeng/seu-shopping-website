@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import { Metadata } from 'next';
+import { Metadata } from "next";
+import TableComponent from '../../components/table/TableComponent'
 export const metadata: Metadata = {
   title: "Dashboard",
   description: "This is Product page store bro",
-  keywords: ["shop", "anime", "shopping", "store"]
+  keywords: ["shop", "anime", "shopping", "store"],
 };
 const page = () => {
   return (
-    <div>
-      This is dashboard
-    </div>
-  )
-}
+    <TableComponent/>
+    
+  );
+};
 
-export default page
+export default page;
